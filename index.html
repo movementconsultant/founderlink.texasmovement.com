@@ -1,539 +1,519 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FounderLink — Operating Playbooks &amp; Capital Pathways</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FounderLink — The front door for founders.</title>
+    <meta
+      name="description"
+      content="FounderLink is the intake layer of Texas Movement. Tell us the problem and the constraints. We’ll route you to the right lane or tell you honestly if there isn’t a fit."
+    />
+    <link rel="canonical" href="https://founderlink.texasmovement.com" />
 
-  <!-- Primary description -->
-  <meta name="description" content="FounderLink is for founders who ship. Operating playbooks and capital pathways that connect builders to the infrastructure they actually need — not advice, not a network for its own sake.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="FounderLink — The front door for founders." />
+    <meta
+      property="og:description"
+      content="Send a brief with context, constraints, and what a good outcome looks like. We assess fit and route you into the right Texas Movement lane or tell you plainly if there isn’t one."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://founderlink.texasmovement.com" />
+    <meta property="og:image" content="/og-founderlink.png" />
+    <meta property="og:site_name" content="FounderLink · Texas Movement" />
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#15181E">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FounderLink — The front door for founders." />
+    <meta
+      name="twitter:description"
+      content="Intake, fit, and routing into Consulting, Distribution, Media, Performance, HERO, Health and more. One door, one next step."
+    />
+    <meta name="twitter:image" content="/og-founderlink.png" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="FounderLink · Texas Movement International">
-  <meta property="og:title" content="FounderLink — Operating Playbooks &amp; Capital Pathways">
-  <meta property="og:description" content="For founders who ship. Operating playbooks and capital pathways that route you to the right infrastructure and aligned capital — inside the Texas Movement network.">
-  <meta property="og:url" content="https://founderlink.texasmovement.com">
-  <meta property="og:image" content="https://founderlink.texasmovement.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:alt" content="FounderLink by Texas Movement International — operating playbooks and capital pathways.">
-
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FounderLink — Operating Playbooks &amp; Capital Pathways">
-  <meta name="twitter:description" content="Builder-first operating playbooks and capital pathways, not a generic founder network. Built inside Texas Movement International.">
-  <meta name="twitter:image" content="https://founderlink.texasmovement.com/og-image.png">
-  <meta name="twitter:image:alt" content="FounderLink by Texas Movement International — operating playbooks and capital pathways.">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --paper: #E7E8E2;
-      --panel: #DDDED7;
-      --ink: #15181E;
-      --ink-soft: #454A54;
-      --line: #C4C6BD;
-      --line-strong: #A6A99F;
-      --white: #F4F5F0;
-      --compression: #274A78; /* blue */
-      --tension: #BD3B22;     /* red */
-      --wrap: 1180px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "IBM Plex Sans", system-ui, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
-    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
-    .section { padding: 96px 0; position: relative; }
-
-    .eyebrow {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: var(--tension);
-      flex: none;
-    }
-
-    h1, h2, h3 {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 600;
-      line-height: 1.04;
-      letter-spacing: -0.01em;
-    }
-    h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); margin-bottom: 18px; }
-    p { color: var(--ink-soft); }
-    p strong { color: var(--ink); font-weight: 600; }
-
-    .topbar {
-      border-bottom: 1px solid var(--line);
-      position: sticky;
-      top: 0;
-      background: rgba(231, 232, 226, 0.86);
-      backdrop-filter: blur(8px);
-      z-index: 50;
-    }
-    .topbar .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 58px;
-    }
-    .brand {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-    }
-    .back {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.72rem;
-      letter-spacing: 0.06em;
-      color: var(--ink-soft);
-      text-decoration: none;
-    }
-    .back:hover { color: var(--ink); }
-
-    .hero {
-      padding: 84px 0 72px;
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-    .hero .wrap {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 54px;
-      align-items: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 5.6vw, 4.4rem);
-      font-weight: 700;
-      margin: 8px 0 24px;
-    }
-    .hero .lede {
-      font-size: 1.12rem;
-      max-width: 31em;
-      margin-bottom: 34px;
-    }
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-    .btn {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.82rem;
-      letter-spacing: 0.04em;
-      padding: 15px 26px;
-      border: 1px solid var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: 0.18s ease;
-      background: var(--ink);
-      color: var(--white);
-      text-transform: uppercase;
-    }
-    .btn:hover { background: transparent; color: var(--ink); }
-    .btn--ghost { background: transparent; color: var(--ink); }
-    .btn--ghost:hover { background: var(--ink); color: var(--white); }
-    .btn .arrow { transition: transform 0.18s ease; }
-    .btn:hover .arrow { transform: translateX(3px); }
-
-    .figure { width: 100%; aspect-ratio: 1 / 0.92; }
-    .fig { width: 100%; height: 100%; display: block; }
-    @keyframes dash { to { stroke-dashoffset: -16; } }
-    .fig .flow { stroke-dasharray: 3 5; animation: dash 1.8s linear infinite; }
-    .fig-caption {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.08em;
-      color: var(--ink-soft);
-      text-transform: uppercase;
-      margin-top: 6px;
-      text-align: right;
-    }
-
-    .section--panel {
-      background: var(--panel);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .two {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border: 1px solid var(--line-strong);
-      margin-top: 42px;
-    }
-    .two .col {
-      padding: 38px 34px;
-    }
-    .two .col:first-child {
-      border-right: 1px solid var(--line-strong);
-    }
-    .two h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-    .two .tag {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      color: var(--tension);
-    }
-    .two ul {
-      list-style: none;
-      margin-top: 18px;
-    }
-    .two li {
-      padding: 13px 0;
-      border-top: 1px solid var(--line);
-      font-size: 0.96rem;
-      color: var(--ink);
-      display: flex;
-      gap: 12px;
-    }
-    .two li::before {
-      content: "→";
-      color: var(--compression);
-      font-family: "IBM Plex Mono", monospace;
-    }
-
-    .steps3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 42px;
-      counter-reset: st;
-    }
-    .step {
-      border: 1px solid var(--line-strong);
-      background: var(--paper);
-      padding: 30px 26px;
-      counter-increment: st;
-    }
-    .step .num {
-      font-family: "Space Grotesk", sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--compression);
-      margin-bottom: 10px;
-    }
-    .step .num::before {
-      content: "0" counter(st);
-    }
-    .step h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-    }
-    .step p {
-      font-size: 0.92rem;
-    }
-
-    .who {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-    .who p {
-      font-size: 1.05rem;
-      margin-bottom: 16px;
-    }
-
-    .gate {
-      border: 1px solid var(--ink);
-      box-shadow: 6px 6px 0 var(--ink);
-      background: var(--paper);
-      padding: 30px 28px;
-    }
-    .gate .k {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--tension);
-      margin-bottom: 16px;
-    }
-    .gate ul { list-style: none; }
-    .gate li {
-      padding: 12px 0;
-      border-top: 1px solid var(--line);
-      font-size: 0.92rem;
-      color: var(--ink);
-    }
-
-    .foot {
-      background: var(--ink);
-      color: var(--paper);
-      padding: 84px 0 40px;
-    }
-    .foot h2 { color: var(--white); }
-    .foot .eyebrow { color: #9aa0ab; }
-    .foot .eyebrow::before { background: var(--tension); }
-    .connect {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin: 38px 0 56px;
-    }
-    .connect a {
-      border-top: 1px solid #2c313b;
-      padding-top: 16px;
-      display: block;
-    }
-    .connect .k {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #8a909b;
-      margin-bottom: 6px;
-    }
-    .connect .v {
-      font-family: "Space Grotesk", sans-serif;
-      font-size: 1.05rem;
-      color: var(--white);
-    }
-    .connect a:hover .v { color: #cdd2da; }
-    .foot .legal {
-      border-top: 1px solid #2c313b;
-      padding-top: 24px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      color: #8a909b;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    @media (max-width: 900px) {
-      .hero .wrap { grid-template-columns: 1fr; gap: 30px; }
-      .figure { max-width: 380px; order: -1; }
-      .two, .who { grid-template-columns: 1fr; }
-      .two .col:first-child {
-        border-right: none;
-        border-bottom: 1px solid var(--line-strong);
+    <!-- JSON-LD (sketched per blueprint) [file:153] -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://founderlink.texasmovement.com#org",
+        "name": "FounderLink",
+        "url": "https://founderlink.texasmovement.com",
+        "parentOrganization": {
+          "@type": "Organization",
+          "@id": "https://texasmovement.com#org",
+          "name": "Texas Movement International"
+        },
+        "founder": {
+          "@type": "Person",
+          "@id": "https://alexandermathai.com/person",
+          "name": "Alexander Mathai"
+        },
+        "sameAs": [
+          "https://texasmovement.com"
+        ]
       }
-      .steps3 { grid-template-columns: 1fr; }
-      .connect { grid-template-columns: 1fr; }
-      .section { padding: 68px 0; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .fig .flow { animation: none; }
-      html { scroll-behavior: auto; }
-    }
-    :focus-visible {
-      outline: 2px solid var(--compression);
-      outline-offset: 3px;
-    }
-  </style>
-</head>
-<body>
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://founderlink.texasmovement.com#website",
+        "url": "https://founderlink.texasmovement.com",
+        "name": "FounderLink",
+        "publisher": {
+          "@id": "https://founderlink.texasmovement.com#org"
+        }
+      }
+    </script>
+    <!-- Optional HowTo JSON-LD for the four-step intake workflow. [file:153] -->
 
-<header class="topbar">
-  <div class="wrap">
-    <a href="https://texasmovement.com" class="brand">FounderLink</a>
-    <a href="https://texasmovement.com" class="back">← Texas Movement International</a>
-  </div>
-</header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <div class="eyebrow">FOUNDERLINK // BUILDERS × INFRASTRUCTURE</div>
-        <h1>For founders who ship.</h1>
-        <p class="lede">
-          Operating playbooks and capital pathways that connect builders to the infrastructure they actually need. Not advice. Not a network for its own sake — a direct line from where you are to the operators, systems, and capital that get the next thing built.
+    <style>
+      :root {
+        --bg: #020617;
+        --fg-primary: #e2e8f0;
+        --fg-secondary: #cbd5e1;
+        --fg-muted: #94a3b8;
+        --border-soft: rgba(148, 163, 184, 0.25);
+        --border-card: rgba(148, 163, 184, 0.22);
+        --accent: #38bdf8;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg-secondary);
+        font-family: "Inter", system-ui, sans-serif;
+        line-height: 1.6;
+      }
+
+      .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+
+      .topbar,
+      .hero,
+      .section,
+      .footer {
+        margin-bottom: 2rem;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: center;
+        border-bottom: 1px solid var(--border-soft);
+        padding-bottom: 1rem;
+      }
+
+      .brand {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .brand-mark {
+        width: 2rem;
+        height: 2rem;
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+      }
+
+      .brand-name {
+        font-weight: 700;
+        color: var(--fg-primary);
+      }
+
+      .brand-subtitle {
+        font-size: 0.9rem;
+        color: var(--fg-muted);
+      }
+
+      .nav {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .nav a {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .nav a:hover {
+        text-decoration: underline;
+      }
+
+      .hero {
+        padding-top: 0.5rem;
+      }
+
+      .eyebrow {
+        color: #60a5fa;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 4.2vw, 3.6rem);
+        line-height: 1.05;
+        color: var(--fg-primary);
+        margin: 0 0 0.5rem;
+      }
+
+      .hero-sub {
+        font-size: clamp(1.7rem, 3.1vw, 2.6rem);
+        line-height: 1.1;
+        color: var(--fg-secondary);
+        margin: 0 0 1rem;
+      }
+
+      .hero-body {
+        font-size: 0.98rem;
+        color: var(--fg-secondary);
+        max-width: 60ch;
+      }
+
+      h2 {
+        font-size: 0.95rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--fg-muted);
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        margin: 0 0 0.4rem;
+        color: var(--fg-primary);
+        font-size: 0.92rem;
+      }
+
+      .card,
+      .faq-item,
+      .contact {
+        border: 1px solid var(--border-card);
+        border-radius: 1rem;
+        background: rgba(15, 23, 42, 0.55);
+        padding: 1rem;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1.25rem;
+      }
+
+      .button {
+        padding: 0.75rem 1rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: var(--bg);
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        color: #e5e7eb;
+      }
+
+      .section {
+        padding-top: 0.5rem;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .bullets {
+        display: grid;
+        gap: 0.75rem;
+        max-width: 70ch;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .contact .fineprint {
+        font-size: 0.85rem;
+        color: var(--fg-muted);
+      }
+
+      .footer {
+        border-top: 1px solid var(--border-soft);
+        padding-top: 1rem;
+        color: var(--fg-muted);
+        font-size: 0.9rem;
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 0.85rem;
+      }
+
+      .footer-links a {
+        color: var(--fg-secondary);
+        text-decoration: none;
+      }
+
+      .footer-links a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-separator {
+        color: #64748b;
+      }
+
+      @media (max-width: 800px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-row {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">FL</div>
+          <div class="brand-copy">
+            <div class="brand-name">FounderLink</div>
+            <div class="brand-subtitle">Intake layer · Texas Movement</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#overview">Overview</a>
+          <a href="#who">Who it’s for</a>
+          <a href="#how">How intake works</a>
+          <a href="#routing">Where you might be routed</a>
+          <a href="#playbooks">Playbooks</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section id="overview" class="hero">
+        <p class="eyebrow">INTAKE · FIT · ROUTING</p>
+        <h1>The front door for founders.</h1>
+        <p class="hero-sub">
+          Tell us the problem and the constraints. We’ll route you to the right lane or tell you honestly if there isn’t
+          a fit.
+        </p>
+        <p class="hero-body">
+          FounderLink is the intake layer of Texas Movement. It is for founders and operators considering working with
+          the ecosystem. It solves the problem of not knowing which door to use or whether there is a fit at all. It
+          works in four steps: you send a brief, we assess fit, we route you or decline honestly, and you leave with one
+          clear next step. It connects to every lane because routing you correctly is its entire job. No maze, no hard
+          sell. Clarity and one next step.
         </p>
         <div class="cta-row">
-          <a class="btn" href="mailto:movementconsultant@gmail.com?subject=FounderLink%20Intro">
-            Request an intro  <span class="arrow">→</span>
-          </a>
-          <a class="btn btn--ghost" href="https://texasmovement.com">
-            See the network <span class="arrow">→</span>
-          </a>
+          <a class="button primary" href="#contact">Start here</a>
+          <a class="button secondary" href="#routing">See where you’d be routed</a>
         </div>
-      </div>
+      </section>
 
-      <aside class="figure">
-        <svg class="fig" viewBox="0 0 320 290" role="img" aria-labelledby="fl-fig">
-          <title id="fl-fig">BUILDER → CAPITAL → INFRASTRUCTURE</title>
-          <rect x="26" y="40" width="268" height="210" rx="22" fill="#F4F5F0" stroke="#C4C6BD" stroke-width="1.4"/>
-          <rect x="42" y="66" width="236" height="60" rx="10" fill="#E7E8E2" stroke="#A6A99F" stroke-width="1"/>
-          <rect x="42" y="136" width="236" height="60" rx="10" fill="#E7E8E2" stroke="#A6A99F" stroke-width="1"/>
-
-          <circle cx="70" cy="96" r="8" fill="#BD3B22"/>
-          <circle cx="160" cy="96" r="8" fill="#274A78"/>
-          <circle cx="250" cy="96" r="8" fill="#15181E"/>
-
-          <line class="flow" x1="78" y1="96" x2="152" y2="96" stroke="#BD3B22" stroke-width="2"/>
-          <line class="flow" x1="168" y1="96" x2="242" y2="96" stroke="#274A78" stroke-width="2"/>
-
-          <text x="70" y="84" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" fill="#454A54">BUILDER</text>
-          <text x="160" y="84" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" fill="#454A54">CAPITAL</text>
-          <text x="250" y="84" font-family="IBM Plex Mono, monospace" font-size="9" text-anchor="middle" fill="#454A54">INFRA</text>
-
-          <text x="160" y="210" font-family="IBM Plex Mono, monospace" font-size="9" fill="#454A54" text-anchor="middle">
-            OPERATING PLAYBOOK  ·  CAPITAL PATHWAY
-          </text>
-        </svg>
-        <div class="fig-caption">FIG. 03 — ROUTING BUILDERS TO INFRASTRUCTURE</div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section section--panel">
-    <div class="wrap">
-      <div class="eyebrow">FOUNDERLINK // 01 — WHAT YOU GET</div>
-      <h2>Two things founders are always short on.</h2>
-      <p>
-        Most founder programs hand you a network and call it support. FounderLink is narrower and more useful: the operating playbooks that compress months of trial-and-error, and the capital pathways that route you to the right money — not just any money.
-      </p>
-
-      <div class="two">
-        <div class="col">
-          <h3>
-            Operating playbooks
-            <span class="tag">HOW</span>
-          </h3>
-          <ul>
-            <li>Repeatable launch and shipping systems.</li>
-            <li>Workflow and team architecture.</li>
-            <li>Founder–operator decision frameworks.</li>
-            <li>The reps, documented — so you skip them.</li>
-          </ul>
+      <section id="who" class="section">
+        <h2>Who it’s for</h2>
+        <div class="bullets">
+          <p>
+            Founders and operators with a real problem and enough of a brief to assess—context, constraints, and what a
+            good outcome looks like.
+          </p>
+          <p>
+            People who would rather be routed correctly than guess between multiple subdomains or lanes inside Texas
+            Movement.
+          </p>
+          <p>
+            It is not for vague, no-context outreach. The clearer the brief, the faster and more accurate the routing.
+          </p>
         </div>
-        <div class="col">
-          <h3>
-            Capital pathways
-            <span class="tag">WHO</span>
-          </h3>
-          <ul>
-            <li>Direct routes to aligned capital.</li>
-            <li>Infrastructure partners, not just investors.</li>
-            <li>Warm introductions inside the TMI network.</li>
-            <li>Matched to your stage, not a generic list.</li>
-          </ul>
+      </section>
+
+      <section id="how" class="section">
+        <h2>How intake works</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>1. Send the brief</h3>
+            <p>
+              You send a short brief—context, constraints, and what a good outcome would look like. That is the entire
+              ask.
+            </p>
+          </article>
+          <article class="card">
+            <h3>2. We assess fit</h3>
+            <p>
+              The brief is read against what Texas Movement actually does. Fit is assessed on stakes, clarity, and lane
+              alignment.
+            </p>
+          </article>
+          <article class="card">
+            <h3>3. We route or decline</h3>
+            <p>
+              If there is a fit, you are routed into the correct lane. If there is not, you are told plainly rather than
+              pulled into a misaligned engagement.
+            </p>
+          </article>
+          <article class="card">
+            <h3>4. You leave with one next step</h3>
+            <p>
+              The output is one clear next step—an introduction to a lane, a suggestion, or a clean “not a fit” so you
+              can move on confidently.
+            </p>
+          </article>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="eyebrow">FOUNDERLINK // 02 — HOW IT WORKS</div>
-      <h2>From where you are to what you need built.</h2>
+      <section id="routing" class="section">
+        <h2>Where you might be routed</h2>
+        <div class="bullets">
+          <p>
+            <strong>Consulting.</strong> When the problem is strategy, systems, or AI-assisted workflows that need clearer execution.
+          </p>
+          <p>
+            <strong>Distribution.</strong> When the problem is IP defense, catalog, or platform operations around rights and listings.
+          </p>
+          <p>
+            <strong>Media.</strong> When the problem is documentation and signal—explaining and recording the work with editorial discipline.
+          </p>
+          <p>
+            <strong>Performance & Health.</strong> When the problem is training, movement, or recovery systems.
+          </p>
+          <p>
+            <strong>HERO.</strong> When the conversation belongs in the product-first footwear and apparel layer.
+          </p>
+        </div>
+      </section>
 
-      <div class="steps3">
-        <article class="step">
-          <div class="num"></div>
-          <h3>Map</h3>
-          <p>We diagnose where your build actually stalls — the bottleneck, not the symptom — and what infrastructure would clear it.</p>
-        </article>
-        <article class="step">
-          <div class="num"></div>
-          <h3>Route</h3>
-          <p>You're matched to the specific playbooks, operators, and capital pathways that fit your stage and your constraint.</p>
-        </article>
-        <article class="step">
-          <div class="num"></div>
-          <h3>Build</h3>
-          <p>Direct introductions and operating support inside the TMI network — so the next thing actually ships.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+      <section id="playbooks" class="section">
+        <h2>Founder playbooks</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Send a brief</h3>
+            <p>
+              Context, constraints, and what a good outcome looks like. That structure alone improves every conversation
+              you have with any partner, inside or outside Texas Movement.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Fit over volume</h3>
+            <p>
+              Aim for engagements where the stakes, scope, and lane match. A clean “not a fit” is often more valuable
+              than a misaligned yes.
+            </p>
+          </article>
+        </div>
+      </section>
 
-  <section class="section">
-    <div class="wrap who">
-      <div>
-        <div class="eyebrow">FOUNDERLINK // 03 — WHO IT'S FOR</div>
-        <h2>Founders who ship — not founders who pitch.</h2>
-        <p>
-          FounderLink is selective by design. It's built for builders with something already in motion who need infrastructure, not encouragement.
+      <section id="faq" class="section">
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <h3>What is FounderLink?</h3>
+            <p>
+              It is the intake layer of Texas Movement—the front door that scopes your problem and routes you to the
+              right lane.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What should I send?</h3>
+            <p>
+              A short brief: context, constraints, and what a good outcome looks like. That is enough to assess fit and
+              routing.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What happens after I send it?</h3>
+            <p>
+              It is assessed for fit. You are then routed to the right lane or told honestly if there is not a real fit
+              with Texas Movement.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is there a cost to intake?</h3>
+            <p>
+              No. Intake and the fit check are how a good engagement starts. Any scoped work happens only after fit is
+              clear.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I go straight to a lane instead?</h3>
+            <p>
+              Yes. FounderLink exists so you do not have to guess, but you can enter a lane directly if you already know
+              where your problem belongs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <h2>Contact</h2>
+        <p>Start here with a brief. Context, constraints, and what a good outcome would look like.</p>
+        <a href="mailto:movementconsultant@gmail.com" class="email">movementconsultant@gmail.com</a>
+        <p class="fineprint">
+          Sending a brief does not create any obligation on either side. There is no guarantee of engagement. You will
+          receive an honest fit assessment and routing where appropriate.
         </p>
-        <p>
-          If that's you, the door is open. Send what you're building and where it's stuck.
-        </p>
-        <p>
-          <a href="mailto:movementconsultant@gmail.com?subject=FounderLink%20Intro&amp;body=What%20I'm%20building%3A%0AWhere%20it's%20stuck%3A%0AWhat%20I%20need%3A">
-            Request an intro →
-          </a>
-        </p>
-      </div>
+      </section>
 
-      <aside class="gate">
-        <div class="k">Good fit if —</div>
-        <ul>
-          <li>You have something built and in motion.</li>
-          <li>You think in systems, not moments.</li>
-          <li>Your constraint is infrastructure or capital.</li>
-          <li>You move on direct introductions fast.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
-</main>
-
-<footer class="foot">
-  <div class="wrap">
-    <div class="eyebrow">FOUNDERLINK // CONNECT</div>
-    <h2>Tell us what you're building.</h2>
-    <div class="connect">
-      <a href="mailto:movementconsultant@gmail.com?subject=FounderLink%20Intro&amp;body=What%20I'm%20building%3A%0AWhere%20it's%20stuck%3A%0AWhat%20I%20need%3A">
-        <div class="k">Email</div>
-        <div class="v">movementconsultant@gmail.com</div>
-      </a>
-      <a href="https://www.linkedin.com/in/alexandermathai/" target="_blank" rel="noopener">
-        <div class="k">LinkedIn</div>
-        <div class="v">Alexander Mathai</div>
-      </a>
-      <a href="https://texasmovement.com" target="_blank" rel="noopener">
-        <div class="k">Network</div>
-        <div class="v">texasmovement.com</div>
-      </a>
-    </div>
-    <div class="legal">
-      <span>© FounderLink — Part of Texas Movement International</span>
-      <span>FOR FOUNDERS WHO SHIP</span>
-    </div>
-  </div>
-</footer>
-
-</body>
+      <footer class="footer">
+        <div class="footer-row">
+          <p>© 2026 Texas Movement International · Systems for people who move.</p>
+          <div class="footer-links">
+            <a href="#overview">Back to top ↑</a>
+            <span class="footer-separator">·</span>
+            <a href="https://alexandermathai.com" target="_blank" rel="noreferrer">Founder</a>
+            <span class="footer-separator">·</span>
+            <a href="https://texasmovement.com" target="_blank" rel="noreferrer">TMI</a>
+            <span class="footer-separator">·</span>
+            <a href="https://consulting.texasmovement.com" target="_blank" rel="noreferrer">Consulting</a>
+            <span class="footer-separator">·</span>
+            <a href="https://distribution.texasmovement.com" target="_blank" rel="noreferrer">Distribution</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>
